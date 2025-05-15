@@ -9,7 +9,7 @@ do
     for i in "${arr[@]}";
     do
         echo "Running CIFAR. Anomaly Class: $i "
-        python train.py --dataset cifar10 --isize 32 --niter 15 --abnormal_class $i --manualseed $m
+        python train.py --dataset cifar10 --isize 32 --niter 15 --abnormal_class $i --manualseed $m --device cpu --workers 0 --display
     done
 done
 exit 0

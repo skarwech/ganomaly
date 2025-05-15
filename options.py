@@ -58,7 +58,7 @@ class Options():
         self.parser.add_argument('--save_image_freq', type=int, default=100, help='frequency of saving real and fake images')
         self.parser.add_argument('--save_test_images', action='store_true', help='Save test images for demo.')
         self.parser.add_argument('--load_weights', action='store_true', help='Load the pretrained weights')
-        self.parser.add_argument('--resume', default='', help="path to checkpoints (to continue training)")
+        self.parser.add_argument('--resume', default='', help="path to checkpoints (to continue training)") 
         self.parser.add_argument('--phase', type=str, default='train', help='train, val, test, etc')
         self.parser.add_argument('--iter', type=int, default=0, help='Start from iteration i')
         self.parser.add_argument('--niter', type=int, default=15, help='number of epochs to train for')
@@ -87,6 +87,7 @@ class Options():
         # set gpu ids
         if self.opt.device == 'gpu':
             torch.cuda.set_device(self.opt.gpu_ids[0])
+            # torch.device(self.opt.gpu_ids[0])
 
         args = vars(self.opt)
 

@@ -107,7 +107,7 @@ def load_data(opt):
         dataloader = {x: torch.utils.data.DataLoader(dataset=dataset[x],
                                                      batch_size=opt.batchsize,
                                                      shuffle=shuffle[x],
-                                                     num_workers=int(opt.workers),
+                                                     num_workers=0,
                                                      drop_last=drop_last_batch[x],
                                                      worker_init_fn=(None if opt.manualseed == -1
                                                      else lambda x: np.random.seed(opt.manualseed)))
